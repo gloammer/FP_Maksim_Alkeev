@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display-container">
+        <input type="text" id="display" disabled />
+      </div>
+
+      <div class="buttons">
+        <button onclick="calculator.appendToDisplay('7')">7</button>
+        <button onclick="calculator.appendToDisplay('8')">8</button>
+        <button onclick="calculator.appendToDisplay('9')">9</button>
+        <button onclick="calculator.clearDisplay()" class="clear">C</button>
+        <button onclick="calculator.appendToDisplay('4')">4</button>
+        <button onclick="calculator.appendToDisplay('5')">5</button>
+        <button onclick="calculator.appendToDisplay('6')">6</button>
+        <button onclick="calculator.operate('+')">+</button>
+        <button onclick="calculator.appendToDisplay('1')">1</button>
+        <button onclick="calculator.appendToDisplay('2')">2</button>
+        <button onclick="calculator.appendToDisplay('3')">3</button>
+        <button onclick="calculator.operate('-')">-</button>
+        <button onclick="calculator.appendToDisplay('0')">0</button>
+        <button onclick="calculator.appendToDisplay('.')">.</button>
+        <button onclick="calculator.calculate()" class="equal">=</button>
+        <button onclick="calculator.operate('*')">*</button>
+        <button onclick="calculator.operate('/')">/</button>
+        <button onclick="calculator.operate('^')">^</button>
+        <button onclick="calculator.operate('sqrt')">√</button>
+      </div>
+    </div>
+
+    <div class="history-container">
+      <div id="history"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
