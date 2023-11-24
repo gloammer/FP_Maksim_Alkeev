@@ -13,6 +13,12 @@ const form = {
   submitButton: document.getElementById("submitButton"),
 };
 
+let isFirstNameTouched = false;
+let isLastNameTouched = false;
+let isEmailTouched = false;
+let isPhoneTouched = false;
+let isMessageTouched = false;
+
 const contactForm = document.getElementById("contactForm");
 
 // Add event listeners
@@ -51,6 +57,8 @@ for (const key in form) {
       form[key].classList.remove("invalid");
       form[key].nextElementSibling.innerText = "";
 
+      updateControlsTouched(key);
+
       validateForm();
     });
   }
@@ -66,40 +74,44 @@ window.addEventListener("load", function () {
 function validateForm() {
   const fieldsWithErrors = [];
 
-  if (!form.firstName.value) {
+  if (!form.firstName.value && isFirstNameTouched) {
     fieldsWithErrors.push("first name");
     form.firstName.classList.add("invalid");
     form.firstName.nextElementSibling.innerText =
       "Please enter a valid first name";
   }
 
-  if (!form.lastName.value) {
+  if (!form.lastName.value && isLastNameTouched) {
     fieldsWithErrors.push("last name");
     form.lastName.classList.add("invalid");
     form.lastName.nextElementSibling.innerText =
       "Please enter a valid last name";
   }
 
-  if (!form.email.value.match(regexEmail)) {
+  if (!form.email.value.match(regexEmail) && isEmailTouched) {
     fieldsWithErrors.push("email");
     form.email.classList.add("invalid");
     form.email.nextElementSibling.innerText = "Please enter a valid email";
   }
 
-  if (!form.phone.value.match(regexPhone)) {
+  if (!form.phone.value.match(regexPhone) && isPhoneTouched) {
     fieldsWithErrors.push("phone");
     form.phone.classList.add("invalid");
     form.phone.nextElementSibling.innerText = "Please enter a valid phone";
   }
 
-  if (!form.message.value) {
+  if (!form.message.value && isMessageTouched) {
     fieldsWithErrors.push("message");
     form.message.classList.add("invalid");
-    form.phmessageone.nextElementSibling.innerText =
-      "Please enter a valid message";
+    form.message.nextElementSibling.innerText = "Please enter a valid message";
   }
 
-  form.submitButton.disabled = fieldsWithErrors.length > 0;
+  form.submitButton.disabled =
+    !form.firstName.value ||
+    !form.lastName.value ||
+    !form.email.value.match(regexEmail) ||
+    !form.phone.value.match(regexPhone) ||
+    !form.message.value;
 
   return fieldsWithErrors;
 }
@@ -108,10 +120,35 @@ function loadFormData() {
   for (const key in form) {
     if (form.hasOwnProperty(key)) {
       const storedValue = localStorage.getItem(key);
+
       if (storedValue) {
         form[key].value = storedValue;
+
+        updateControlsTouched(key);
       }
     }
+  }
+}
+
+function updateControlsTouched(key) {
+  if (key === "firstName") {
+    isFirstNameTouched = true;
+  }
+
+  if (key === "lastName") {
+    isLastNameTouched = true;
+  }
+
+  if (key === "email") {
+    isEmailTouched = true;
+  }
+
+  if (key === "phone") {
+    isPhoneTouched = true;
+  }
+
+  if (key === "message") {
+    isMessageTouched = true;
   }
 }
 
@@ -148,7 +185,6 @@ function getCookie(name) {
 
 function openModal(message) {
   const modal = document.getElementById("modal");
-  const modalContent = document.getElementById("modal-content");
   const modalMessage = document.getElementById("modal-message");
 
   modalMessage.innerText = message;
@@ -158,3 +194,4 @@ function openModal(message) {
     modal.style.display = "none";
   };
 }
+
