@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <main class="main-content">
+      <section class="left-section">
+        <div class="left-content">
+          <div class="profile">
+            <div class="image-container">
+              <img src="./avatar.jpg" alt="" />
+            </div>
+            <h2 class="name">Alkeev Maksim</h2>
+            <p class="career">Frontend Software Engineer</p>
+          </div>
+          <div class="contact-info">
+            <h3 class="main-title">Contact Info</h3>
+            <ul>
+              <li>
+                <i class="fa fa-github"></i>
+                gloammer
+              </li>
+              <li>
+                <i class="fa fa-phone"></i>
+                +010 9590-4535
+              </li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                symraklabs@gmail.com
+              </li>
+              <li>
+                <i class="fa fa-linkedin"></i>
+                www.linkedin.com/in/maxim-alkeev-5b8226220/
+              </li>
+              <li>
+                <i class="fa fa-telegram"></i>
+                @gloammer
+              </li>
+              <li>
+                <i class="fa fa-instagram"></i>
+                @gloammer
+              </li>
+              <li>
+                <i class="fa fa-map-marker"></i>
+                Seoul, South Korea
+              </li>
+            </ul>
+
+            <section class="contact-form">
+              <h2 class="main-title">Contact Form</h2>
+
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="firstName" class="required">First Name</label>
+                  <input type="text" id="firstName" name="firstName" required />
+                  <span class="error-message" data-for="firstName"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="firstName" class="required">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" required />
+                  <span class="error-message" data-for="lastName"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="required">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@example.com"
+                    required
+                  />
+                  <span class="error-message" data-for="email"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="required">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7 (XXX) XXX-XXXX"
+                    required
+                  />
+                  <span class="error-message" data-for="phone"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="required">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                  ></textarea>
+                  <span class="error-message" data-for="message"></span>
+                </div>
+
+                <button id="submitButton" type="submit" disabled>Send</button>
+              </form>
+            </section>
+          </div>
+          <div class="skills-section">
+            <h3 class="main-title">Skills</h3>
+            <ul>
+              <li>
+                <p class="skill-title">Javascript</p>
+                <div class="progress-bar">
+                  <div class="progress js-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Typescript</p>
+                <div class="progress-bar">
+                  <div class="progress ts-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Gitlab</p>
+                <div class="progress-bar">
+                  <div class="progress gitlab-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Rx js</p>
+                <div class="progress-bar">
+                  <div class="progress rxjs-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Angular</p>
+                <div class="progress-bar">
+                  <div class="progress angular-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Node js</p>
+                <div class="progress-bar">
+                  <div class="progress node-js-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Html/Css</p>
+                <div class="progress-bar">
+                  <div class="progress html-css-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Amplitude</p>
+                <div class="progress-bar">
+                  <div class="progress amplitude-progress"></div>
+                </div>
+              </li>
+              <li>
+                <p class="skill-title">Jira</p>
+                <div class="progress-bar">
+                  <div class="progress jira-progress"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="references-section">
+            <h3 class="main-title">References</h3>
+            <div class="referee">
+              <h6 class="sub-title">Stefan Popov</h6>
+              <p class="sub-paragraf">
+                Front-end tech lead, Product owner at SORAMITSU
+              </p>
+              <ul>
+                <li>
+                  <i class="fa fa-github"></i>
+                  stefashkaa
+                </li>
+                <li>
+                  <i class="fa fa-envelope"></i>
+                  stef4n.popov@gmail.com
+                </li>
+                <li>
+                  <i class="fa fa-telegram"></i>
+                  @stefanpopov
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="right-section">
+        <div class="right-main-content">
+          <section class="about sect">
+            <h2 class="right-title">About Me</h2>
+            <p class="paragraf">
+              Hi!
+              <br />
+              I am a young and ambitious frontend developer specializing in the
+              Angular framework. My goal is to create interactive and modern web
+              applications that provide an excellent user experience.
+              <br />
+              <br />
+              I am a responsible and communicative professional ready to work in
+              a team and make efforts to achieve common goals. My aim is to
+              continuously grow and improve my skills to create the best web
+              applications. I am interested in a long-term career in frontend
+              development and am ready to contribute to the successful projects
+              of your company.
+            </p>
+          </section>
+
+          <section class="experince sect">
+            <h2 class="right-title">Experience</h2>
+            <div class="timeline">
+              <div class="left-tl-content">
+                <h5 class="tl-title">CQG</h5>
+                <p class="paragraf">2019 - 2021 (Part-time)</p>
+              </div>
+              <div class="right-tl-content">
+                <div class="tl-content">
+                  <h5 class="tl-title-2">
+                    Frontend Developer (Intern, Junior)
+                  </h5>
+                  <p class="paragraf">
+                    I was a frontend developer in a product developer team which
+                    was responsible for development and maintenance of a
+                    high-performance trading and data visualisation platform -
+                    CQG Desktop.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline">
+              <div class="left-tl-content">
+                <h5 class="tl-title">B2Broker</h5>
+                <p class="paragraf">2021 - Now (Full-time)</p>
+              </div>
+              <div class="right-tl-content">
+                <div class="tl-content">
+                  <h5 class="tl-title-2">Frontend Developer (Middle)</h5>
+                  <p class="paragraf">
+                    I am involved in the development of a trading terminal for
+                    MOEX, a personal cabinet for managing crypto assets in
+                    B2Core, and the B2Trader trading terminal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="education sect">
+            <h2 class="right-title">Education</h2>
+            <div class="timeline">
+              <div class="left-tl-content">
+                <h5 class="tl-title">Samara University</h5>
+                <p class="paragraf">2017 - 2021</p>
+              </div>
+              <div class="right-tl-content">
+                <div class="tl-content">
+                  <h5 class="tl-title-2">Bachelor's degree</h5>
+                  <p class="paragraf">
+                    I studied in the field of fundamental informatics and
+                    information technologies at the 6th faculty.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline">
+              <div class="left-tl-content">
+                <h5 class="tl-title">Samara University</h5>
+                <p class="paragraf">2022 - Now</p>
+              </div>
+              <div class="right-tl-content">
+                <div class="tl-content">
+                  <h5 class="tl-title-2">Master's degree.</h5>
+                  <p class="paragraf">
+                    I studied in the field of fundamental informatics and
+                    information technologies
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="awards sect">
+            <h2 class="right-title">Awards</h2>
+            <div class="timeline">
+              <div class="left-tl-content">
+                <h5 class="tl-title">Diploma</h5>
+                <p class="paragraf">2021</p>
+              </div>
+              <div class="right-tl-content">
+                <div class="tl-content">
+                  <h5 class="tl-title-2">Diploma for a presentation</h5>
+                  <p class="paragraf">
+                    Diploma for a presentation at the 71st Youth Scientific
+                    Conference of Samara University.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal">
+      <div id="modal-content" class="modal-content">
+        <span id="modal-message" class="modal-message"></span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
