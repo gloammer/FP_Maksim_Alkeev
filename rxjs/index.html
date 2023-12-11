@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS</title>
+  </head>
+  <body>
+    <h1>Task 1</h1>
+    <div id="primeNumbers"></div>
+
+    <h1>Task 2</h1>
+    <div id="countdown"></div>
+
+    <h1>Task 3</h1>
+    <button id="button1">Please</button>
+    <button id="button2">select</button>
+    <button id="button3">me</button>
+    <div id="backgroundColor"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.js"></script>
+    <script>
+      const { of, range, interval, throwError, fromEvent, merge } = rxjs;
+      const { filter, toArray, take, finalize, map } = rxjs.operators;
+
+      // Task 1
+      const isPrime = (num) => {
+        for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+          if (num % i === 0) return false;
+        }
+        return num !== 1;
+      };
+
+      range(1, 100)
+        .pipe(filter(isPrime), toArray())
+        .subscribe((primeNumbers) => {
+          const primeNumbersDiv = document.getElementById("primeNumbers");
+          primeNumbersDiv.innerHTML = "Prime: " + primeNumbers.join(", ");
+        });
+
+      // Task 2
+      const countdownObservable = interval(1000).pipe(
+        take(5),
+        finalize(() => throwError("Ошибка!"))
+      );
+
+      countdownObservable.subscribe(
+        (value) => {
+          const countdownDiv = document.getElementById("countdown");
+          countdownDiv.innerHTML = "Отсчет: " + (5 - value);
+        },
+        (error) => {
+          const countdownDiv = document.getElementById("countdown");
+          countdownDiv.innerHTML = "Ошибка: " + error;
+        },
+        () => {
+          const countdownDiv = document.getElementById("countdown");
+          countdownDiv.innerHTML = "Завершено";
+        }
+      );
+
+      // Task 3
+      const getRandomColor = () =>
+        `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+      const button1$ = fromEvent(
+        document.getElementById("button1"),
+        "click"
+      ).pipe(map(getRandomColor));
+      const button2$ = fromEvent(
+        document.getElementById("button2"),
+        "click"
+      ).pipe(map(getRandomColor));
+      const button3$ = fromEvent(
+        document.getElementById("button3"),
+        "click"
+      ).pipe(map(getRandomColor));
+
+      merge(button1$, button2$, button3$).subscribe((color) => {
+        const backgroundColorDiv = document.getElementById("backgroundColor");
+        document.body.style.backgroundColor = color;
+        backgroundColorDiv.innerHTML = "Color: " + color;
+      });
+    </script>
+  </body>
+</html>
