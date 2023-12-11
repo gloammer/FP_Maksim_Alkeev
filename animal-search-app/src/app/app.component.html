@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+
+<div>
+  <h1>Animal Search App</h1>
+
+  <ul>
+    <li *ngFor="let animal of animals" (click)="showAnimalDetails(animal)">
+      {{ animal.type }}: {{ animal.name }}
+    </li>
+  </ul>
+
+  <button (click)="toggleCatVisibility()">
+    {{ isHideCats ? "Показать котиков" : "Скрыть котиков" }}
+  </button>
+</div>
+
+<div *ngIf="selectedAnimal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeDetails()">&times;</span>
+    <h2>Подробная информация о животном</h2>
+    <p><strong>Тип:</strong> {{ selectedAnimal.type }}</p>
+    <p><strong>Кличка:</strong> {{ selectedAnimal.name }}</p>
+    <p><strong>Возраст:</strong> {{ selectedAnimal.age }} лет</p>
+    <p><strong>Цвет:</strong> {{ selectedAnimal.color }}</p>
+    <p><strong>Вес:</strong> {{ selectedAnimal.weight }} кг</p>
+  </div>
+</div>
