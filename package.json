@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix",
     "build": "tsc",
     "start": "npm run build && node dist/out-tsc/injectable.js"
@@ -11,6 +11,8 @@
     }
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
     "eslint": "^8.55.0",
     "husky": "^8.0.3",
     "typescript": "^5.3.3"
