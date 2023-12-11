@@ -1,0 +1,69 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.city-select {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  height: 30px;
+  width: 140px;
+  background-color: #4caf50;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+.weather-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.weather-element {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+#date {
+  font-size: 18px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
